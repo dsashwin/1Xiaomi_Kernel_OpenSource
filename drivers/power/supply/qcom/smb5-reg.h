@@ -1,4 +1,5 @@
 /* Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
+ * Copyright (C) 2021 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -100,9 +101,6 @@ enum {
 #define INHIBIT_ANALOG_VFLT_MINUS_100MV		1
 #define INHIBIT_ANALOG_VFLT_MINUS_200MV		2
 #define INHIBIT_ANALOG_VFLT_MINUS_300MV		3
-
-#define CHGR_FLOAT_VOLTAGE_CAL_CFG		(CHGR_BASE + 0x77)
-#define EN_FCC_CHANGE_DURING_ESR			BIT(4)
 
 #define CHARGE_RCHG_SOC_THRESHOLD_CFG_REG	(CHGR_BASE + 0x7D)
 
@@ -209,7 +207,6 @@ enum {
 /********************************
  *  USBIN Peripheral Registers  *
  ********************************/
-
 #define APSD_STATUS_REG				(USBIN_BASE + 0x07)
 #define APSD_STATUS_7_BIT			BIT(7)
 #define HVDCP_CHECK_TIMEOUT_BIT			BIT(6)
