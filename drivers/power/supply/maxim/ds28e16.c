@@ -1,6 +1,5 @@
 /*******************************************************************************
  * Copyright (C) 2015 Maxim Integrated Products, Inc., All Rights Reserved.
- * Copyright (C) 2021 XiaoMi, Inc.
  *
  *******************************************************************************
  *
@@ -32,11 +31,17 @@
 #include <linux/regmap.h>
 #include <linux/random.h>
 
+#if defined(CONFIG_K9A_CHARGE) || defined(CONFIG_K6_CHARGE)
 #define ds_info	pr_err
 #define ds_dbg	pr_err
 #define ds_err	pr_err
 #define ds_log	pr_err
-
+#else
+#define ds_info	pr_info
+#define ds_dbg	pr_debug
+#define ds_err	pr_err
+#define ds_log	pr_err
+#endif
 
 struct ds28e16_data {
 	struct platform_device *pdev;

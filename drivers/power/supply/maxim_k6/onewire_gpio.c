@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2016  xiaomi Inc.
- * Copyright (C) 2021 XiaoMi, Inc.
  */
 #define pr_fmt(fmt)	"[Onewire] %s: " fmt, __func__
 
@@ -22,11 +21,17 @@
 #include <linux/device.h>
 #include <linux/spinlock.h>
 
-
+#if defined(CONFIG_K9A_CHARGE) || defined(CONFIG_K6_CHARGE)
+#define ow_info	pr_err
+#define ow_dbg	pr_err
+#define ow_err	pr_err
+#define ow_log	pr_err
+#else
 #define ow_info	pr_info
 #define ow_dbg	pr_debug
 #define ow_err	pr_debug
 #define ow_log	pr_err
+#endif
 
 #define DRV_STRENGTH_16MA		(0x7 << 6)
 #define DRV_STRENGTH_4MA		(0x1 << 6)

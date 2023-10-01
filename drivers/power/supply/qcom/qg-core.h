@@ -1,5 +1,4 @@
 /* Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
- * Copyright (C) 2021 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -254,6 +253,7 @@ struct qpnp_qg {
 	int			batt_age_level;
 	struct alarm		alarm_timer;
 	u32			sdam_data[SDAM_MAX];
+	int 		sdam_soc;
 
 	/* DT */
 	struct qg_dt		dt;
